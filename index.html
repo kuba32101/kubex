@@ -13,19 +13,32 @@
 		.p {
 			font-size: 20px;
 		}
+		#b {
+			font-size: 20px;
+			border-radius: 15px;
+			padding: 4px;
+		}
 	</style>
 	<script>
 		function PA() {
+			document.getElementById("d").style.display = "none";
 			const A1 = new Audio("fnaf.mp3");
-			A1.play().catch(() => {
-				alert("Chuj Ci W Dupe")});
+			const A2 = new Audio("fnaf2.mp3");
+			A1.play().then(() => {
+				document.body.style.backgroundColor = "black";})
+			.catch(() => {
+				alert("Zjebałeś bo nie odpaliło chuju")});
+			A1.addEventListener("ended", () => {
+				document.body.style.backgroundColor = "#77d4cf";
+				document.getElementById("d").style.display = "block";});
 		}
 	</script>
 </head>
 <body>
 	<h1>WC jak Wielki Chuj</h1>
 	<p class="p">xddd</p>
-	<button onclick="PA()">Kliknij mnie do zawału dupy</button>
+	<div id="d">
+		<button id="b" onclick="PA()">Kliknij mnie do zawału dupy</button>
+	</div>
 </body>
-
 </html>
